@@ -6,10 +6,66 @@
     <title>株式会社 栄工業</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #0073cf; color: white; text-align: center; padding: 15px; }
-        nav { background: #f4f4f4; padding: 10px; text-align: center; }
-        nav a { margin: 0 15px; text-decoration: none; color: #0073cf; font-weight: bold; }
-        .container { padding: 20px; max-width: 900px; margin: auto; }
+        header {
+            background-color: #0073cf;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header-right {
+            position: absolute;
+            right: 50px; /* 右の余白を増やして左に寄せる */
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #FFD700;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: black;
+        }
+
+        nav {
+            background: #0073cf;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+        }
+        nav a:not(:last-child) {
+            border-right: 1px solid white;
+            padding-right: 15px;
+        }
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            margin-top: 120px;
+        }
         .hero {
             background: url('hero-image.jpg') no-repeat center center/cover;
             text-align: center;
@@ -17,6 +73,7 @@
             color: white;
             font-size: 24px;
             font-weight: bold;
+            margin-top: 120px;
         }
         .contact-banner {
             background-color: #0073cf;
@@ -39,22 +96,21 @@
 </head>
 <body>
     <header>
-        <h1>株式会社 栄工業</h1>
+        <div class="header-left">
+            <span class="header-title">株式会社 栄工業</span>
+        </div>
+        <div class="header-right">
+            <span>📞 0465-63-1237</span>
+        </div>
     </header>
     <nav>
+        <a href="#home">ホーム</a>
         <a href="#services">サービス内容</a>
         <a href="#first-time">初めての方へ</a>
         <a href="#company">会社案内</a>
         <a href="#news">お知らせ</a>
+        <a href="#recruit">求人募集</a>
     </nav>
-    <div class="hero">
-        <p>水のトラブルを迅速解決！！</p>
-        <p>水回りの工事もお任せください！</p>
-    </div>
-    <div class="contact-banner">
-        <p>お急ぎの方はお電話ください！</p>
-        <h2>098-123-4567</h2>
-    </div>
     <div class="container">
         <section id="services" class="services">
             <h2>サービス内容</h2>
@@ -73,13 +129,8 @@
             <p>最新のお知らせやニュースを掲載します。</p>
         </section>
     </div>
-    <div class="contact-banner">
-        <p>水回りのことならお任せください！</p>
-        <h2>0465-63-1237</h2>
-        <button>サイトからのお問合せはこちら</button>
-    </div>
     <footer class="footer">
-        <p>&copy; 2025 株式会社 栄設備. All Rights Reserved.</p>
+        <p>&copy; 2025 株式会社 栄工業. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
